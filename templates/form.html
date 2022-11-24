@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main %}
+<form method="post" action="{{ url_for('htmlRequest', foo=10, bar=30) }}">
+  <div class="mb-3">
+    <label for="textInput1" class="form-label">Text1</label>
+    <input type="text" class="form-control" id="textInput1" name="textInput1" aria-describedby="Text1" value="2022">
+  </div>
+  <div class="mb-3">
+    <label for="textInput2" class="form-label">Text2</label>
+    <input type="text" class="form-control" id="textInput2" name="textInput2" aria-describedby="Text2" value="1024">
+  </div>
+  <div class="mb-3">
+    <label for="framework" class="form-label">Backend Framework</label>
+    <select class="form-select" aria-label="Default select example" name="framework" id="framework" required>
+      <option value="flask">Flask</option>
+      <option value="django">Django</option>
+      <option value="fastapi">FastAPI</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

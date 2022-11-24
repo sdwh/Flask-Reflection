@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h2>Request Headers</h2>
+<dl class="row">
+  {% for key, value in viewModel['headers'].items() %}
+  <dt class="col-sm-3">{{key}}</dt>
+  <dd class="col-sm-9">{{value}}</dd>
+  {% endfor %}
+</dl>
+<h2>Request Query String</h2>
+<dl class="row">
+  {% for key, value in viewModel['querystring'].items() %}
+  <dt class="col-sm-3">{{key}}</dt>
+  <dd class="col-sm-9">{{value}}</dd>
+  {% endfor %}
+</dl>
+<h2>Request Payload</h2>
+<dl class="row">
+  {% for key, value in viewModel['payload'].items() %}
+  <dt class="col-sm-3">{{key}}</dt>
+  <dd class="col-sm-9">{{value}}</dd>
+  {% endfor %}
+</dl>
+<h2>Request Json</h2>
+<dl class="row">
+  {% for key, value in viewModel['json'].items() %}
+  <dt class="col-sm-3">{{key}}</dt>
+  <dd class="col-sm-9">{{value}}</dd>
+  {% endfor %}
+</dl>
+<a class="btn btn-primary" href="{{ url_for('postFormRequest') }}">Post Form</a>
+{% endblock %}
